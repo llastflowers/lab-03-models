@@ -1,5 +1,5 @@
 // after all delete newly created directories and files
-const fs = require('fs');
+const fs = require('fs').promises;
 
 const {
   mkdirp,
@@ -7,6 +7,7 @@ const {
 } = require('../lib/file-system.js');
 
 describe('file system', () => {
+    
   it('makes a directory', () => {
     mkdirp('./my-directory');
     fs.readdir('./my-directory', (err, files) => {
